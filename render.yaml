@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: esp32-fruit-api-python
+    env: python
+    region: oregon          # Change to preferred region
+    branch: main
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: "10000"      # Render will override this automatically
